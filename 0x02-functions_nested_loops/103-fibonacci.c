@@ -7,22 +7,19 @@
  */
 int main(void)
 {
-	unsigned long fib = 0, fib1 = 1, sum;
-	float allsum;
+	long int n, a = 1, b = 2, sum = 0, finSum = 0;
 
-	while (1)
+	for (n = 0; n < 49; n++)
 	{
-		allsum = fib + fib1;
-		if (sum > 4000000)
-			break;
+		if ((b % 2 == 0) && (b <= 4000000))
+		{
+			finSum = finSum + b;
+		}
+		sum = a + b;
+		a = b;
+		b = sum;
 
-		if ((sum % 2) == 0)
-			allsum += sum;
-
-		fib = fib1;
-		fib1 = sum;
 	}
-	printf("%.0f\n", allsum);
-
+	printf("%ld\n", finSum);
 	return (0);
 }

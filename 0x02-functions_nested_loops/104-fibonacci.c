@@ -7,44 +7,36 @@
  */
 int main(void)
 {
-	int nex;
-	unsigned long fib = 0, fib1 = 1, add;
-	unsigned long fib_p, fib_p1, fib1_p, fib1_p1;
-	unsigned long p1, p2;
+	unsigned long int m, n, o, a, b, c, d;
 
-	for (nex = 0; nex < 92; nex++)
+	n = 1;
+	o = 2;
+
+	printf("%lu", n);
+
+	for (m = 1; m < 91; m++)
 	{
-		add = fib1 + fib2;
-		printf("%lu, ", add);
-
-		fib1 = fib2;
-		fib2 = add;
+		printf(", %lu", o);
+		o = o + n;
+		n = o - n;
 	}
 
-	fib_p = fib / 10000000000;
-	fib1_p = fib1 / 10000000000;
-	fib_p1 = fib % 10000000000;
-	fib1_p1 = fib1 % 10000000000;
+	a = n / 1000000000;
+	b = n % 1000000000;
+	c = o / 1000000000;
+	d = o % 1000000000;
 
-	for (nex = 93; nex < 99; nex++)
+	for (m = 92; m < 99; ++m)
 	{
-		p1 = fib_p + fib1_p;
-		p2 = fib_p1 + fib1_p1;
-		if (fib_p1 + fib1_p1 > 9999999999)
-		{
-			p1 += 1;
-			p2 %= 10000000000;
-		}
-
-		printf("%lu%lu", p1, p2);
-		if (nex != 98)
-			printf(", ");
-
-		fib_p = fib1_p;
-		fib_p1 = fib1_p1;
-		fib1_p = p1;
-		fib1_p1 = p2;
+		printf(", %lu", c + (d / 1000000000));
+		printf("%lu", d % 1000000000);
+		c = c + a;
+		a = c - a;
+		d = d + b;
+		b = d - b;
 	}
+
 	printf("\n");
+
 	return (0);
 }

@@ -5,7 +5,7 @@
  *
  * @s: string to print
  *
- * Return: void
+ * Return: string to reverse
  */
 void rev_string(char *s)
 {

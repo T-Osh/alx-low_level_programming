@@ -3,7 +3,7 @@
 /**
  * _atoi - converts string to integer
  *
- * @s: string 
+ * @s: string
  *
  * Return: converted integer
  */

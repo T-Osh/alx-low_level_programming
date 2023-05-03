@@ -5,7 +5,7 @@
  *
  * @dest: destination pointer
  *
- * @scr: source pointer
+ * @src: source pointer
  *
  * Return: Destination
  */

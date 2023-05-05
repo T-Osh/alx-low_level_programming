@@ -8,26 +8,22 @@
  */
 char *leet(char *str)
 {
-	char lt[5][3] = {{'a', 'A', '4'},
-		{'e', 'E', '3'},
-		{'o', 'O', '0'},
-		{'t', 'T', '7'},
-		{'l', 'L', '1'}};
+	int count = 0, i;
+	int low_letters[] = {97, 101, 111, 116, 108};
+	int upp_letters[] = {65, 69, 79, 84, 76};
+	int numbers[] = {52, 51, 48, 55, 49};
 
-	int i, j, k;
-
-	for (i = 0; str[i] != '\0'; i++)
+	while (*(s + count) != '\0')
 	{
-		for (j = 0; j < 5; j++)
+		for (i = 0; i < 5; i++)
 		{
-			for (k = 0; k < 2; k++)
+			if (*(str + count) == low_letters[i] || *(str + count) == upp_letters[i])
 			{
-				if (str[i] == lt[j][k])
-				{
-					str[i] = lt[j][2];
-				}
+				*(str + count) = numbers[i];
+				break;
 			}
 		}
+		count++;
 	}
 
 	return (str);

@@ -25,6 +25,11 @@ char *string_toupper(char *);
 /* 6 cap string task */
 char *cap_string(char *);
 
+/* 7 leet task */
+char *leet(char *);
+/* 8 rot task */
+char *rot13(char *);
+
 /* 9 101 print number task */
 void print_number(int n);
 

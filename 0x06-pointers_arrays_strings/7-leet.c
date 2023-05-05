@@ -3,28 +3,34 @@
 /**
  * *leet - encodes string
  *
- * @str: string to encode
+ * @s: string to encode
  *
  * Return: encoded string
  */
-char *rot13(char *s)
+char *leet(char *s)
 {
-	int count = 0, i;
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i;
+	int j;
+	int k;
 
-	while (*(s + count) != '\0')
+	char l[] = "oOlLeEaAtT";
+	char e[] = "0011334477";
+
+	i = 0;
+	while (s[i] != '\0')
 	{
-		for (i = 0; i < 52; i++)
+		j = 0;
+		k = 0;
+		while (l[j] != '\0')
 		{
-			if (*(s + count) == alphabet[i])
+			if (s[i] == l[j])
 			{
-				*(s + count) = rot13[i];
-				break;
+				k = j;
+				s[i] = e[k];
 			}
+			j++;
 		}
-		count++;
+		i++;
 	}
-
 	return (s);
 }

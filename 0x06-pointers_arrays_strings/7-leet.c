@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * *leet - encodes string
  *
@@ -6,25 +7,24 @@
  *
  * Return: encoded string
  */
-char *leet(char *str)
+char *rot13(char *s)
 {
 	int count = 0, i;
-	int low_letters[] = {97, 101, 111, 116, 108};
-	int upp_letters[] = {65, 69, 79, 84, 76};
-	int numbers[] = {52, 51, 48, 55, 49};
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	while (*(s + count) != '\0')
 	{
-		for (i = 0; i < 5; i++)
+		for (i = 0; i < 52; i++)
 		{
-			if (*(str + count) == low_letters[i] || *(str + count) == upp_letters[i])
+			if (*(s + count) == alphabet[i])
 			{
-				*(str + count) = numbers[i];
+				*(s + count) = rot13[i];
 				break;
 			}
 		}
 		count++;
 	}
 
-	return (str);
+	return (s);
 }

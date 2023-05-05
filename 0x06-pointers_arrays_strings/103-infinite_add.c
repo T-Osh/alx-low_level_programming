@@ -15,41 +15,37 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int carry = 0;
-	int len1 = strlen(n1);
-	int len2 = strlen(n2);
-	int max_len = (len1 > len2) ? len1 : len2;
-	int i = 0;
+	int i, j, k, l, m, n;
 
-	if (max_len + 1 > size_r)
-	{
+	for (i = 0; n1[i]; i++)
+		;
+	for (j = 0; n2[j]; j++)
+		;
+	if (i > size_r || j > size_r)
 		return (0);
-	}
-	r[max_len + 1] = '\0';
-
-	for (i = 0; i < max_len; i++)
+	m = 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
 	{
-		int d1 = (i < len1) ?
-			n1[len1 - 1 - i] - '0' : 0;
-		int d2 = (i < len2) ?
-			n2[len2 - 1 - i] - '0' : 0;
-		int sum = d1 + d2 + carry;
-
-		carry = sum / 10;
-
-		r[max_len - i] = (sum % 10) + '0';
-	}
-	if (carry == 1)
-	{
-		if (max_len + 2 > size_r)
+		n = m;
+		if (i >= 0)
+			n += n1[i] - '0';
+		if (j >= 0)
+			n += n2[j] - '0';
+		if (i < 0 && j < 0 && n == 0)
 		{
-			return (0);
+			break;
 		}
-		r[0] = '1';
-		return (&r[0]);
+		m = n / 10;
+		r[k] = n % 10 + '0';
 	}
-	else
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
+		return (0);
+	for (k -= 1, l = 0; l < k; k--, l++)
 	{
-		return (&r[1]);
+		m = r[k];
+		r[k] = r[l];
+		r[l] = m;
 	}
+	return (r);
 }

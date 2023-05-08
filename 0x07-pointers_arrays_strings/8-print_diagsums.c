@@ -1,3 +1,4 @@
+#include <std.io>
 #include "main.h"
 
 /**

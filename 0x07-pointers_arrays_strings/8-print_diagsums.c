@@ -8,23 +8,25 @@
  *
  * @size: size of matrix
  *
- * Return: void
+ * Return: Always 0 (Success)
  *
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, sumd1 = 0, sumd2 = 0, st1, st2;
+	int sum1, sum2, y;
 
-	for (i = 0; i <= (size - 1); i++)
+	sum1 = 0;
+	sum2 = 0;
+
+	for (y = 0; y < size; y++)
 	{
-		step1 =  (size + 1) * i;
-		sumd1 = sumd1 + *(a + st1);
+		sum1 = sum1 + a[y * size + y];
 	}
 
-	for (j = 1; j <= size; j++)
+	for (y = size - 1; y >= 0; y--)
 	{
-		st2 = (size - 1) * j;
-		sumd2 = sumd2 + *(a + st2);
+		sum2 += a[y * size + (size - y - 1)];
 	}
-	printf("%d, %d\n", sumd1, sumd2);
+
+	printf("%d, %d\n", sum1, sum2);
 }

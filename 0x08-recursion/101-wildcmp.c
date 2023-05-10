@@ -10,7 +10,6 @@
 * Return: 1 if similar or 0 otherwise
 *
 */
-
 int wildcmp(char *s1, char *s2)
 {
 	if (*s2 == '\0')

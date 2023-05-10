@@ -8,7 +8,6 @@
 * Return: true if string is a palindrome
 *
 */
-
 int is_palindrome(char *s)
 {
 	int index = 0;

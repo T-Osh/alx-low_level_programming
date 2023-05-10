@@ -11,14 +11,13 @@
 int is_palindrome(char *s)
 {
 	int index = 0;
-	int len = find_strlen(s);
+	int len = _strlth(s);
 
 	if (!(*s))
 		return (1);
 
 	return (chck_palindrome(s, len, index));
 }
-
 /**
  * _strlth - length of a string
  *
@@ -39,7 +38,6 @@ int _strlth(char *s)
 
 	return (len);
 }
-
 /**
  * chck_palindrome - checks string is palindrome
  *

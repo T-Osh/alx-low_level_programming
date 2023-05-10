@@ -28,10 +28,10 @@ int _sqrt_recursion(int n)
  */
 int _sqrt(int n, int x)
 {
-	if (x * x > n)
+	if (n > x / 2)
 		return (-1);
-	else if (x * x == n)
-		return (x);
+	else if (n * n == x)
+		return (n);
 
 	return (_sqrt(n, x + 1));
 }

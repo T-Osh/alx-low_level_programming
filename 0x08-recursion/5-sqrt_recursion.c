@@ -20,16 +20,16 @@ int _sqrt_recursion(int n)
  *
  * @n: number
  *
- * @i: iterator
+ * @x: iterator
  *
  * Return: square root
  *
  */
-int _sqrt(int n, int i)
+int _sqrt(int n, int x)
 {
-	if (i * i > n)
+	if (n > x / 2)
 		return (-1);
-	if (i * i == n)
-		return (i);
-	return (_sqrt(n, i + 1));
+	else if (n * n == x)
+		return (n);
+	return (_sqrt(n + 1, x));
 }

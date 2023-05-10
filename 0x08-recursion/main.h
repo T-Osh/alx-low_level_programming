@@ -21,12 +21,11 @@ int is_palindrome(char *s);
 
 int wildcmp(char *s1, char *s2);
 
-int _sqrt(int n, int i);
+int _sqrt(int n, int x);
 
 int is_prime(int n, int i);
 
-int _strlth(char *s);
+int check_palindrome(char *s, int len, int index);
 
-int chck_palindrome(char *s, int len, int index);
-
+int find_strlen(char *s)
 #endif
